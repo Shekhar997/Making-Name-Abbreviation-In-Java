@@ -1,0 +1,52 @@
+// First we import scanner class , it allows user to input data
+import java.util.Scanner;
+
+public class abbrevation {
+
+public static void main(String Args[]){
+
+// We initailize Scanner class so that we can use it in our program
+Scanner sc = new Scanner(System.in);
+
+System.out.println("Please Enter Your Name ");
+
+//we will initialize String and this string will contain name which you will be giving
+String fullName = sc.nextLine();
+
+// This will show you the name you entered
+System.out.println("Entered Name is : " + fullName);
+
+//now we will initialize an array of character and its length will be equals to that of String length
+char nameTransfer[] = new char[fullName.length()];
+
+//now we initailize character which help in abbreviation
+char temp = '.';
+
+//this loop will work for the same number of times as our fullName length is, Also in this we convert our string into char Array using function
+for(int i = 0;i<fullName.length();i++)
+{
+
+nameTransfer[i] = fullName.charAt(i);
+
+}
+
+System.out.println("Abbreviation for name is :");
+
+//in this loop we just print first character only in nameTransfer array
+for(int i =0; i<1;i++)
+{
+System.out.print(nameTransfer[0]);
+}
+
+//in this loop we will determine where is space/whitespace in array, when we find it that space or whitespace can be converted with our temp char defined earlier  
+for(int i =0; i<fullName.length();i++){
+if(nameTransfer[i] == ' '){
+nameTransfer[i] = temp;
+System.out.print(nameTransfer[i]);
+System.out.print(nameTransfer[i+1]);
+
+}
+}
+}
+
+}
